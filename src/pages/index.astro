@@ -1,0 +1,363 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Nick Dowling — Built out west. Shipped everywhere." />
+    <title>Nick Dowling</title>
+  </head>
+  <body>
+
+    <!-- Nav -->
+    <nav>
+      <div class="container nav-inner">
+        <a href="/" class="nav-logo">Explore →</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>Nick Dowling</h1>
+        <p class="tagline">Built out west.<br />Shipped everywhere.</p>
+      </div>
+
+      <svg class="hero-illustration" viewBox="0 0 660 340" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="oceanFade" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%"  stop-color="#4AABB8" stop-opacity="0"/>
+            <stop offset="20%" stop-color="#4AABB8" stop-opacity="0.3"/>
+            <stop offset="58%" stop-color="#4AABB8" stop-opacity="1"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Sun glow + disc -->
+        <circle cx="448" cy="152" r="72" fill="#C8921A" opacity="0.09"/>
+        <circle cx="448" cy="152" r="38" fill="#C8921A"/>
+
+        <!-- Ocean: top edge curves down to the left, fades to transparent -->
+        <path d="M 0 295 C 120 268 250 238 370 212 C 460 192 560 186 660 182 L 660 340 L 0 340 Z" fill="url(#oceanFade)"/>
+
+        <!-- Shimmer lines following the curve -->
+        <path d="M 80 314 C 200 290 330 262 450 238 C 540 220 604 214 660 210" stroke="#9DDDE6" stroke-width="1.5" fill="none" opacity="0.35"/>
+        <path d="M 160 332 C 280 308 410 280 530 256 C 596 240 636 234 660 230" stroke="#9DDDE6" stroke-width="1.2" fill="none" opacity="0.2"/>
+      </svg>
+
+      <div class="hero-stripes" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container section-inner">
+        <p class="section-label">About</p>
+        <h2>Who I am</h2>
+        <p class="body-copy">
+          I'm Nick. I'd traditionally call myself a software engineer, but that designation is quickly gathering dust. Something new is emerging via agentic AI development — I'm embracing it and seeing how fast I can ship. Fewer hands, more output.
+        </p>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="section section-warm">
+      <div class="container">
+        <p class="section-label">Work</p>
+        <h2>Things I've worked on</h2>
+        <div class="work-grid">
+          <div class="work-card">
+            <p class="work-card-label">AI / RAG</p>
+            <h3>docmind</h3>
+            <p>Ingests raw text, chunks it using embedding-based similarity, and enables semantic retrieval. A practical RAG implementation in C#.</p>
+            <div class="work-card-tags">
+              <span>C#</span>
+              <span>RAG</span>
+              <span>Embeddings</span>
+            </div>
+          </div>
+          <div class="work-card">
+            <p class="work-card-label">Systems / .NET</p>
+            <h3>ProductFlow</h3>
+            <p>Reliable async order processing via RabbitMQ, the outbox pattern, and an idempotent consumer built to handle failures and duplicate delivery gracefully.</p>
+            <div class="work-card-tags">
+              <span>.NET</span>
+              <span>RabbitMQ</span>
+              <span>PostgreSQL</span>
+              <span>Docker</span>
+            </div>
+          </div>
+          <div class="work-card">
+            <p class="work-card-label">Automation</p>
+            <h3>Job Wrangler</h3>
+            <p>Scrapes job boards for relevant postings, delivers a daily email digest, and auto-tailors a resume template to each listing.</p>
+            <div class="work-card-tags">
+              <span>Python</span>
+              <span>Scraping</span>
+              <span>Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-dark">
+      <div class="container section-inner">
+        <p class="section-label contact-label">Contact</p>
+        <h2>Get in touch</h2>
+        <p class="body-copy">
+          Whether you want to collaborate, hire, or just talk shop about what AI can actually do — I'm easy to find.
+        </p>
+        <a href="mailto:nick@nickdowling.dev" class="contact-link">nick@nickdowling.dev</a>
+      </div>
+    </section>
+
+  </body>
+</html>
+
+<style>
+  /* ── Nav ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid rgba(44, 31, 14, 0.08);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--orange);
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--bg-dark);
+    min-height: calc(100vh - 56px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 800;
+    color: var(--bg);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .tagline {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-weight: 600;
+    color: var(--orange);
+    line-height: 1.3;
+  }
+
+  /* Hero illustration */
+  .hero-illustration {
+    position: absolute;
+    right: 0;
+    bottom: 48px;
+    width: 52vw;
+    max-width: 660px;
+    min-width: 320px;
+    pointer-events: none;
+  }
+
+  @media (max-width: 700px) {
+    .hero-illustration {
+      width: 100%;
+      min-width: unset;
+      opacity: 0.15;
+      bottom: 48px;
+    }
+  }
+
+  /* Diagonal stripe bar at bottom of hero */
+  .hero-stripes {
+    position: absolute;
+    bottom: 0;
+    left: -5%;
+    width: 110%;
+    height: 48px;
+    display: flex;
+    transform: skewY(-2deg);
+    transform-origin: bottom left;
+  }
+
+  .hero-stripes span {
+    flex: 1;
+  }
+
+  .hero-stripes span:nth-child(1) { background: var(--stripe-1); }
+  .hero-stripes span:nth-child(2) { background: var(--stripe-2); }
+  .hero-stripes span:nth-child(3) { background: var(--stripe-3); }
+  .hero-stripes span:nth-child(4) { background: var(--stripe-4); }
+  .hero-stripes span:nth-child(5) { background: var(--stripe-5); }
+  .hero-stripes span:nth-child(6) { background: var(--stripe-6); }
+
+  /* ── Sections ── */
+  .section {
+    padding: 6rem 0;
+  }
+
+  .section-inner {
+    max-width: 640px;
+  }
+
+  .section h2 {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .body-copy {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+  .section-warm {
+    background: #F2E8D9;
+  }
+
+  .section-dark {
+    background: var(--bg-dark);
+    color: var(--bg);
+  }
+
+  .section-dark h2 {
+    color: var(--bg);
+  }
+
+  .section-dark .body-copy {
+    color: rgba(250, 245, 238, 0.65);
+  }
+
+  .contact-label {
+    color: var(--gold) !important;
+  }
+
+  .contact-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--orange);
+    border-bottom: 2px solid var(--orange);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .contact-link:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* ── Work grid ── */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .work-card {
+    background: var(--bg);
+    border: 1px solid rgba(44, 31, 14, 0.1);
+    border-radius: 4px;
+    padding: 2rem;
+  }
+
+  .work-card-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+  }
+
+  .work-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .work-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+  }
+
+  .work-card-tags span {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--olive);
+    background: rgba(92, 74, 40, 0.08);
+    border: 1px solid rgba(92, 74, 40, 0.18);
+    border-radius: 2px;
+    padding: 0.2rem 0.5rem;
+  }
+</style>
